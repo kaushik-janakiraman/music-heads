@@ -1,8 +1,10 @@
-
+import accessRequest from "./api/accessRequest"
 
 function App() {
 
-  return 
+  accessRequest()
+
+  return <h1>Hello</h1> 
 }
 
 export default App
