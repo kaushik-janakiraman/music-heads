@@ -1,17 +1,20 @@
 import axios from 'axios'
+import accessRequest from './accessRequest'
 
-const requestArtist = async () => { 
-    // https://open.spotify.com/artist/
+const requestArtist = async () => {
 
-    const artistResponse = await axios.get('https://api.spotify.com/v1/artists/1mYsTxnqsietFxj1OgoGbG?si=rMdENkuAR2KuH237Irxp3Q', {
-        headers: {
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
+    try {
+        const artistResponse = await axios.get('https://api.spotify.com/v1/artists/1mYsTxnqsietFxj1OgoGbG?si=rMdENkuAR2KuH237Irxp3Q')
+        const artistData = await artistResponse.data
+        console.log(artistData)
+    } catch (err) {
+        if(err.response.status === 401) {
+            accessRequest()
+            requestArtist()
+        } else {
+            console.log(err)
         }
-    })
-
-    const artistData = await artistResponse.data
-    console.log(artistData)
-    console.log((localStorage.getItem('token')).toLocaleString())
+    }
 }
 
 export default requestArtist

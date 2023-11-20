@@ -1,0 +1,9 @@
+#side-bar {
+    display: inline-block;
+    width: 20%;
+    height: 120px;
+    background-color: #1a1a1a;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 20px;
+}

@@ -1,0 +1,28 @@
+#logo {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.music-icon, .home-icon, .search-icon {
+    color: #fff;
+    vertical-align: text-bottom;
+    margin-right: 3px;
+}
+
+.home-icon, .search-icon {
+    margin-right: 16px;
+}
+
+.search-icon, .search {
+    display: inline-block;
+}
+
+.logo-content, .home-menu, .search-menu {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.search-menu {
+    margin-top: 16px;
+}
